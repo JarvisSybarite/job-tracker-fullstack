@@ -1,14 +1,47 @@
-# Job Application Tracker
+# Job Application Tracker API
 
-A full-stack web application to track job applications, manage interview stages, and analyze application progress.
+Backend service for a job application tracking system.
+This API will support creating, updating, and tracking job applications through different stages.
 
-## Planned Features
-- User authentication
-- Create, edit, and delete job applications
-- Track application status (Applied, Interviewing, Offer, Rejected)
-- Simple analytics dashboard
+## Features
+- REST API built with FastAPI
+- Health check endpoint
+- Auto-generated API documentation (Swagger UI)
+- Structured for future database and authentication integration
 
-## Tech Stack (Planned)
-- Frontend: React
-- Backend: API (Node.js or FastAPI)
-- Database: PostgreSQL
+## Tech Stack
+- Python 3
+- FastAPI
+- Uvicorn
+
+## API Endpoints
+
+Method | Endpoint | Description
+GET    | /        | Root status check
+GET    | /health  | Service health check
+
+## API Docs Preview
+![FastAPI Swagger UI](docs/api-docs.png)
+
+## How to Run Locally
+
+Create virtual environment:
+python3 -m venv venv
+
+Activate it:
+source venv/bin/activate
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run the server:
+uvicorn main:app --reload
+
+Open in browser:
+http://127.0.0.1:8000
+
+API documentation:
+http://127.0.0.1:8000/docs
+
+## Project Status
+In progress — next steps include database integration and CRUD endpoints for job applications.
