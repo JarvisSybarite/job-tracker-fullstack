@@ -3,6 +3,8 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+applications_db = []
+
 class JobApplication(BaseModel):
     company: str
     role: str
@@ -18,5 +20,10 @@ def health_check():
 
 @app.post("/applications")
 def create_application(application: JobApplication):
+    applications_db.append(application)
     return {"created": True, "application": application}
+@app.get("/applications")
+def list_applications():
+    return applications_db
+
 
